@@ -1,0 +1,63 @@
+@import url(https://fonts.googleapis.com/css?family=Lobster|Hind:400,700);
+
+$font-Head:    Lobster, Helvetica, sans-serif;
+$font-body:    Hind, Helvetica, sans-serif;
+$main-teal: #49BFAE;
+$light-bluegrey: #42657A;
+$dark-bluegrey: #3A586B;
+$main-white: #ECF7F9;
+
+nav ul a,
+nav .brand-logo {
+	color: $light-bluegrey;
+}
+
+p {
+	line-height: 2rem;
+}
+
+.button-collapse {
+	color: #26a69a;
+}
+
+.parallax-container {
+	min-height: 380px;
+	line-height: 0;
+	height: auto;
+	color: rgba(255,255,255,.9);
+}
+
+.parallax-container .section {
+	width: 100%;
+}
+
+@media only screen and (max-width : 992px) {
+	.parallax-container .section {
+		position: absolute;
+		top: 40%;
+	}
+	#index-banner .section {
+		top: 10%;
+	}
+}
+
+@media only screen and (max-width : 600px) {
+	#index-banner .section {
+		top: 0;
+	}
+}
+
+.icon-block {
+	padding: 0 15px;
+}
+.icon-block .material-icons {
+	font-size: inherit;
+}
+
+footer.page-footer {
+	margin: 0;
+}
+
+.bg-bluegrey {
+	background-color: $dark-bluegrey;
+}
