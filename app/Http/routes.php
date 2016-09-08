@@ -15,7 +15,7 @@ use Illuminate\Http\Request;
 
 Route::get('/', function () {
 	$notes = Storage::disk('local')->get('my-apps/notes/notes.txt');
-	return View::make('my-apps.notes')->with('notes', $notes);
+	return View::make('my-apps.note')->with('notes', $notes);
 });
 Route::post('/save', function (Request $request) {
 	$notes = $request->input('notes');
