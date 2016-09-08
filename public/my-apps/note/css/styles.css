@@ -1,0 +1,26 @@
+.cke_notifications_area {
+	position: fixed !important;
+	top: 80% !important;
+	left: 50% !important;
+	transform: translate(-50%, -50%) !important;
+}
+
+.cke_notification {
+	padding: 0 15px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.cke_notification_success {
+	background-color: #18bc9c;
+    border-color: #18bc9c;
+    color: #ffffff;
+}
+
+.cke_notification_message {
+	font-size: 1em;
+}
+
+.cke_notification_close {
+	display: none;
+}
