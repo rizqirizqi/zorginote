@@ -135,5 +135,6 @@ a > img {
 }
 
 p {
-	line-height: 5px;
+	margin: 5px 0;
+	line-height: 15px;
 }
