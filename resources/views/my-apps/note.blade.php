@@ -15,8 +15,23 @@
   <script src="{{ asset('my-apps/note/ckeditor.min.js') }}"></script>
   <script src="{{ asset('my-apps/note/config.js') }}"></script>
   <script>
+	CKEDITOR.plugins.add( 'dividerBar', {
+		init: function( editor ) {
+			editor.addCommand( 'insertDividerBar', {
+				exec: function( editor ) {
+					editor.insertHtml( '___________________________________________________' );
+				}
+			});
+			editor.ui.addButton( 'DividerBar', {
+				label: '_',
+				command: 'insertDividerBar',
+				toolbar: 'insert'
+			});
+		}
+	});
+	
     var editor = CKEDITOR.replace('note', {
-		
+		extraPlugins: 'dividerBar'
 	});
 	var saveTimeout = null;
 	editor.on( 'change', function( evt ) {

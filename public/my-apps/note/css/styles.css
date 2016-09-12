@@ -25,3 +25,20 @@
 .cke_notification_close {
 	display: none;
 }
+
+#cke_note {
+	max-width: 900px;
+    margin: 0 auto;
+}
+
+.cke_button__dividerbar {
+    padding: 4px 9px 4px 6px !important;
+}
+
+.cke_button__dividerbar_icon {
+	display: none !important;
+}
+
+.cke_button__dividerbar_label {
+	display: inline !important;
+}
