@@ -6,7 +6,8 @@
 }
 
 .cke_notification {
-	padding: 0 15px;
+	padding: 0 10px;
+	line-height: 5px;
     border: 1px solid transparent;
     border-radius: 4px;
 }
@@ -23,4 +24,21 @@
 
 .cke_notification_close {
 	display: none;
+}
+
+#cke_note {
+	max-width: 900px;
+    margin: 0 auto;
+}
+
+.cke_button__dividerbar {
+    padding: 4px 9px 4px 6px !important;
+}
+
+.cke_button__dividerbar_icon {
+	display: none !important;
+}
+
+.cke_button__dividerbar_label {
+	display: inline !important;
 }
