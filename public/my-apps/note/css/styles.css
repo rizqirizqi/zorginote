@@ -6,7 +6,8 @@
 }
 
 .cke_notification {
-	padding: 0 15px;
+	padding: 0 10px;
+	line-height: 5px;
     border: 1px solid transparent;
     border-radius: 4px;
 }
