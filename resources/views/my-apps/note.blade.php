@@ -33,28 +33,30 @@
     var editor = CKEDITOR.replace('note', {
 		extraPlugins: 'dividerBar'
 	});
-	var saveTimeout = null;
-	editor.on( 'change', function( evt ) {
-		clearTimeout(saveTimeout);
-		saveTimeout = setTimeout(function(){ saveNote(); }, 5000);
-		console.log( 'Data: ' + evt.editor.getData() );
-		console.log( 'Total bytes: ' + evt.editor.getData().length );
+	
+	editor.on("instanceReady",function() {
+		editor.addCommand( "save", {
+			modes : { wysiwyg:1, source:1 },
+			exec : function () {
+				var content = editor.getData();
+				saveNote(content);
+			}
+		});
 	});
 	
-    function saveNote() {
-      var content = editor.getData()
-      var xhr = new XMLHttpRequest();
-      xhr.onreadystatechange = function() {
-        if (xhr.readyState == 4 && xhr.status == 200) {
-         console.log(this.responseText)
-       }
-     };
-     xhr.open("POST", "{{ url('save') }}", true);
-     var token = document.querySelector('meta[name="csrf-token"]').getAttribute("content");
-     xhr.setRequestHeader("X-CSRF-TOKEN", token);
-     xhr.setRequestHeader('Content-type', 'application/json');
-     xhr.send(JSON.stringify({'notes':content}));
-   }
+	function saveNote(content) {
+		var xhr = new XMLHttpRequest();
+		xhr.onreadystatechange = function() {
+			if (xhr.readyState == 4 && xhr.status == 200) {
+				console.log(this.responseText)
+			}
+		};
+		xhr.open("POST", "{{ url('save') }}", true);
+		var token = document.querySelector('meta[name="csrf-token"]').getAttribute("content");
+		xhr.setRequestHeader("X-CSRF-TOKEN", token);
+		xhr.setRequestHeader('Content-type', 'application/json');
+		xhr.send(JSON.stringify({'notes':content}));
+	}
  </script>
 </body>
 </html>
